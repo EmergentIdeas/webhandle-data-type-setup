@@ -1,0 +1,10 @@
+
+__::$pretemplate__
+<h1>Edit data-type-name</h1>
+<form method="post" action="__dreck.editUrl__" class="data-type-name-fields-form ei-form">
+__::./fields__
+<button type="submit">Save</button>
+</form>
+
+
+__::$posttemplate__

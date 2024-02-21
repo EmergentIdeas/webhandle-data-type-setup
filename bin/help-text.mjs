@@ -1,5 +1,5 @@
 
-export default let message =
+let message =
 `
 Sets up a new data type fo the webhandle framework.
 Usage:
@@ -7,3 +7,4 @@ Usage:
 npx webhandle-data-type-setup -d "data-type-name"
 
 `
+export default message

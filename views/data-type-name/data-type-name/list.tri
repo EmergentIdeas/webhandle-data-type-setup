@@ -1,0 +1,15 @@
+
+__::$pretemplate__
+
+
+<h2>data-type-name</h2>
+<div class="ei-editable-sortable-tiles data-type-name-tiles">
+	<a href="__dreck.createUrl__">Add data-type-name</a>
+	<ul class="tiles" data-sort-url="__dreck.sortUrl__">
+	__focus::./tile__
+
+	</ul>
+</div>
+
+
+__::$posttemplate__

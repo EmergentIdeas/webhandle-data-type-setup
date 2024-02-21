@@ -8,9 +8,18 @@ module.exports = {
     apps: [{
             name: appName + '-web',
             script: './web-server.js',
+			node_args: ['--inspect'],
             "env": {
                 PORT: 3000,
-				NODE_ENV: 'development',
+				NODE_ENV: 'development'
+				, dbs: [
+					{
+						"type": "mongodb",
+						"dbName": "test",
+						"url": "mongodb://localhost:27017/",
+						"collectionNames": ["webhandleusers_users"]
+					}
+				]
             }
         },
         {

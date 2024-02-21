@@ -15,8 +15,8 @@ let templates = {}
 
 export default function integrate(dbName, options) {
 	let opt = Object.assign({
-		collectionName: 'resourcearticles',
-		templateDir: 'node_modules/@webhandle/data-type-name/views',
+		collectionName: 'dataTypeName',
+		templateDir: 'node_modules/data-type-package-name/views',
 		mountPoint: '/admin/data-type-name',
 		allowedGroups: ['administrators']
 	}, options || {})

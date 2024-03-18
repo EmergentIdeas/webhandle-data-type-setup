@@ -18,7 +18,8 @@ export default function integrate(dbName, options) {
 		collectionName: 'dataTypeName',
 		templateDir: 'node_modules/data-type-package-name/views',
 		mountPoint: '/admin/data-type-name',
-		allowedGroups: ['administrators']
+		allowedGroups: ['administrators'],
+		dreckOptions: {}
 	}, options || {})
 	let collectionName = opt.collectionName
 
@@ -34,15 +35,20 @@ export default function integrate(dbName, options) {
 			default: webhandle.dbs[dbName].collections[collectionName]
 		}
 	})
-	webhandle.services.dataTypeName = dataService
+	webhandle.services['dataTypeName'] = dataService
 
+
+	if(!opt.dreckOptions.dataService) {
+		opt.dreckOptions.dataService = dataService
+	}
 
 	// setup admin gui tools
-	let dreck = new DataTypeNameDreck({
-		dataService: dataService
-	})
-
+	let dreck = new DataTypeNameDreck(opt.dreckOptions)
 	let router = dreck.addToRouter(express.Router())
+	if(!webhandle.drecks) {
+		webhandle.drecks = {}
+	}
+	webhandle.drecks['dataTypeName'] = dreck
 	
 	if(opt.allowedGroups && opt.allowedGroups.length > 0) {
 		let securedRouter = allowGroup(
@@ -67,8 +73,10 @@ export default function integrate(dbName, options) {
 		// webhandle.templateLoaders.push((name, callback) => {
 		// 	callback(templates[name])
 		// })
-
 	}
+	
+	integrate.service = dataService
+	integrate.dreck = dreck
 }
 
 integrate.templates = templates

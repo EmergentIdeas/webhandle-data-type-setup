@@ -1,7 +1,7 @@
 
 <tr>
 	<td>
-		<a href="__$globals.dreck.editPrefix____this._id__/edit">__this.name__</a>
+		<a href="__$globals.dreck.editPrefix____this._id__/edit">__this.id__</a>
 	</td>
 	<td class="actions">
 		<form class="delete" method="post" action="__$globals.dreck.editPrefix____this._id__/delete" onsubmit="return confirm('Delete?')"	>

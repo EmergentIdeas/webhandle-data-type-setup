@@ -23,7 +23,8 @@ export default class DataTypeNameDreck extends Dreck {
 					}
 					, createValuedCheckboxInjector('groups')
 				]
-			}
+			},
+			options
 		)
 	}
 	addAdditionalFormInformation(focus, req, res, callback) {

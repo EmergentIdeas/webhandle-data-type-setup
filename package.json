@@ -1,6 +1,6 @@
 {
 	"name": "webhandle-data-type-setup",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "setup a project to develop a webhandle data type",
 	"main": "server-lib/server-integrator.mjs",
 	"browser": "client-lib/client-integrator.mjs",
